@@ -8,6 +8,8 @@
         
         vm.isHidden = false;
         
+        vm.tempData = {'bookTitle' : '', 'genre' : '', 'yearPublished' : ''};
+
         vm.hideTable = function()
         {
         	vm.isHidden = !vm.isHidden
@@ -21,6 +23,13 @@
              });
             
         };
+
+        vm.saveBook = function(bookToAdd)
+        {
+            bookService.saveBook(vm.tempData);
+            location.reload();
+
+             }
 
         function init() {
         	bookService.getBooks().then(function (results) {

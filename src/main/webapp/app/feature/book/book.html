@@ -10,6 +10,11 @@
         			<th>{{'Genre' | uppercase}}</th>
         			<th>{{'Year Published' | uppercase}}</th>
         		</tr>
+                <tr>
+                    <td><input  ng-model="bookCtrl.tempData.bookTitle"/></td>
+                    <td><input  ng-model="bookCtrl.tempData.genre"/></td>
+                    <td><input  ng-model="bookCtrl.tempData.yearPublished"/></td>
+                    <span><td><button class="btn" value="save" ng-click="bookCtrl.saveBook(book)">Add</button></td></span></tr>
         		<tr ng-repeat="book in bookCtrl.books">
         			<td>{{book.bookTitle}}</td>
         			<td>{{book.genre}}</td>
